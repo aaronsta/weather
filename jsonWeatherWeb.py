@@ -3,12 +3,8 @@ from urllib.request import urlopen
 url = "https://api.weather.gov/alerts/active?area=MI"
 response = urlopen(url)
 data = json.loads(response.read())
-#print(data)
-#f = open('weatherAll.json')
-#f = open('weather04142023.json')  
-# returns JSON object as 
-# a dictionary
-#data = json.load(f)
+print("got data")
+
 
 data_lower = data["features"]
 alerts = []
@@ -32,6 +28,4 @@ for alert in alerts:
 
 with open('alerts.json', 'a') as outfile:
     json.dump(alerts, outfile)
-    
-# Closing file
-#f.close() 
+
