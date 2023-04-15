@@ -26,6 +26,7 @@ for alert in alerts:
     print(alert["headline"])
     print(alert["desc"])
 
-with open('alerts.json', 'a') as outfile:
+file_loc = '/Users/aaronstark/Documents/dev/job/alerts.json'
+with open(file_loc, 'a') as outfile:
     json.dump(alerts, outfile)
 
